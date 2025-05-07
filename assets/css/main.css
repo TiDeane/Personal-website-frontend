@@ -2304,6 +2304,7 @@ input, select, textarea {
   line-height: 1.25em;
 }
 
+
 .panel#CV {
   padding: 0;
 }
@@ -2319,6 +2320,7 @@ input, select, textarea {
   width: 30%;
   padding: 2rem;
   color: #e0e0e0;
+	order: 0;
 }
 
 .cv-right {
@@ -2326,37 +2328,77 @@ input, select, textarea {
   width: 70%;
   padding: 2rem;
   color: #333;
+  word-wrap: break-word;
+	order: 1;
 }
 
-.title {
-	text-transform: uppercase;
-	font-weight: 600;
-	letter-spacing: 1px;
-	margin-bottom: 20px;
-	font-family: 'Poppins', sans-serif;
+.title.aside {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  margin-bottom: 0px;
+  font-family: 'Poppins', sans-serif;
+  border-bottom: 2px solid #fff;
 }
 
-.contact-info ul {
-	position: relative;
-	padding-left: 10px;
+.aside-section ul {
+  margin-bottom: 1;
+  position: relative;
 }
 
-.contact-info ul li {
-	position: relative;
-	list-style: none;
-	margin: 10px 0;
+.aside-section ul li {
+  position: relative;
+  margin: 5px 0;
+  padding-left: 0.1em;
+  line-height: 1.4;
 }
 
-.contact-info ul li .icon {
-	display: inline-block;
-	width: 50px;
-	font-size: 25px;
-	text-align: center;
-	color: #b87d83;
+.aside-section ul li .icon {
+  display: inline-block;
+  width: 30px;
+  font-size: 18px;
+  text-align: center;
+  color: #b87d83;
 }
 
-.contact-info ul li span {
-	font-weight: 300;
+.aside-section ul li span {
+  font-size: 0.8em;
+  font-weight: 300;
+  line-height: 0.5;
+  display: inline;
+}
+
+.aside-section ul li a {
+  font-size: 0.8em;
+  font-weight: 300;
+  line-height: 0.5;
+  display: inline;
+  color: #fff;
+}
+
+
+@media screen and (max-width: 980px) {
+  .cv-panel {
+    flex-direction: column;
+  }
+
+	.cv-right {
+    order: 0;
+    padding: 1rem;
+  }
+
+  .cv-left {
+    order: 1;
+    padding: 1rem;
+  }
+
+  .cv-right,
+  .cv-left {
+    width: 100%;
+    padding: 1.5rem;
+  }
 }
 
 
