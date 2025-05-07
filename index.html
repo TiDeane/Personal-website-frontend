@@ -1,12 +1,12 @@
 <!DOCTYPE HTML>
 <!--
-	Astral by HTML5 UP
+	Initial design: Astral by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
 	<head>
-		<title>Astral by HTML5 UP</title>
+		<title>Tiago Deane CV</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -20,7 +20,7 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<a href="#" class="icon solid fa-home"><span>Home</span></a>
-						<a href="#work" class="icon solid fa-folder"><span>Work</span></a>
+						<a href="#CV" class="icon solid fa-folder"><span>Curriculum</span></a>
 						<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
 					</nav>
 
@@ -30,98 +30,97 @@
 						<!-- Me -->
 							<article id="home" class="panel intro">
 								<header>
-									<h1>Tiago Deane</h1>
-									<p>Motta e Silva (or title?)</p>
+									<h1>Tiago Deane</h1> <!-- TODO: pôr linha em baixo disso pra separar visualmente o nome do profile -->
+									<p>TODO: Profile here (team skills, "passion" wow!)</p> 
 								</header>
-								<a href="#work" class="jumplink pic">
+								<a href="#CV" class="jumplink pic">
 									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
 									<img src="images/me.jpg" alt="" />
 								</a>
-								<div id="visitor-count">Number of visitors: add later with backend...</div>
+								<div id="visitor-count">TODO: add number of visitors with backend... (also, maybe put contact icons here?)</div>
 							</article>
 
-						<!-- Work -->
-							<article id="work" class="panel">
+						<!-- Curriculum -->
+							<article id="CV" class="panel cv-panel">
+								<!--
 								<header>
-									<h2>Curriculum Vitæ</h2>
+									<h2>Tiago Deane</h2>
 								</header>
-								<p>
-									- Make a timeline-style curriculum here, starting from most recent (Master's degree).<br>
-									- Show skills first? Like experience with programming languages and such? Maybe mention the skills along with the degrees I acquired them from.<br>
-									- Can also list relevant university courses when the degrees are mentioned.
-									Corresponding projects can be linked as the courses are mentioned, or there could be a separate section for projects<br>
-									- Maybe list AWS certificates (with Credly links) at the start, too?<br>
-									<br>
-									Also, mention citizenships and language fluency at the start
-								</p>
-								<section>
-									<div class="row">
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic01.jpg" alt=""></a>
+								-->
+
+								<!-- Left Sidebar Section -->
+									<div class="cv-left">
+										<div class="contact-info">
+											<h3 class = "title">Certifications</h3>
+											<ul>
+												<li>AWS Certified Cloud Practitioner</li>
+												<li>AWS Solutions Architect (Associate)</li>
+											</ul>
 										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic02.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic03.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic04.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic05.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic06.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic07.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic08.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic09.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic10.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic11.jpg" alt=""></a>
-										</div>
-										<div class="col-4 col-6-medium col-12-small">
-											<a href="#" class="image fit"><img src="images/pic12.jpg" alt=""></a>
-										</div>
+
+										<h3>Skills</h3>
+										<p>
+											Backend: abc<br>
+											Frontend: xyz<br>
+											AWS: S3, EC2, etc
+										</p>
+
+										<h3>Languages</h3>
+										<p>
+											English - Fluent (C2)<br>
+											Portuguese - Native
+										</p>
+
+										<h3>Citizenship</h3>
+										<p>Portuguese, British, Brazilian</p>
 									</div>
-								</section>
+
+									<!-- Main Content Section -->
+									<div class="cv-right">
+										<h3 class = "title">Education</h3>
+										<ul>
+											<!-- TODO: for this list, list-style: none and use IST's icon -->
+											<li>
+												<h5>2024-2026 (expected)</h5>
+												<h4>Master's in Computer Science and Engineering</h4> 
+												<h4>Instituto Superior Técnico</h4>
+											</li>
+											<li>
+												<h5>2021-2024</h5>
+												<h4>Bachelor's in Computer Science and Engineering</h4>
+												<h4>Instituto Superior Técnico</h4>
+											</li>
+										</ul>
+									</div>
 							</article>
 
 						<!-- Contact -->
 							<article id="contact" class="panel">
-								<header>
-									<h2>Contact Me</h2>
-								</header>
-								<footer>
-									<ul class="items">
+								<div class="contact-info">
+									<h3 class = "title">Contact Info</h3>
+									<ul>
 										<li>
-											<h3>Email</h3>
+											<span class="icon solid fa-envelope"></span>
 											<a href="mailto:tiagortg@gmail.com">tiagortg@gmail.com</a>
 										</li>
 										<li>
-											<h3>Social</h3>
-											<ul class="icons">
-												<li><a href="https://www.linkedin.com/in/tiago-deane-8053a5338/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-												<li><a href="https://github.com/TiDeane" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-												<li>
-													<a href="https://www.credly.com/users/tiago-deane-motta-e-silva" class="icon custom-icon">
-														<img src="images/newCredly2.png" alt="Credly" class="icon-img" />
-														<span class="label">Credly</span>
-													</a>
-												</li>
-											</ul>
+											<span class="icon brands fa-linkedin-in"></span>
+											<a href="https://www.linkedin.com/in/tiago-deane-8053a5338/">https://www.linkedin.com/in/tiago-deane-8053a5338/</a>
+										</li>
+										<li>
+											<span class="icon brands fa-github"></span>
+											<a href="https://github.com/TiDeane">https://github.com/TiDeane</a>
+										</li>
+										<li>
+											<span class="icon brands fa-discord"></span>
+											<a href="https://discordapp.com/users/197405278172479498">https://discordapp.com/users/197405278172479498</a>
+										</li>
+										<li>
+											<span class="icon solid fa-map-marker"></span>
+											<span class="text">Lisbon, Portugal</span>
 										</li>
 									</ul>
-								</footer>
+								</div>
 							</article>
 
 					</div>
@@ -129,7 +128,7 @@
 				<!-- Footer -->
 					<div id="footer">
 						<ul class="copyright">
-							<li>&copy; 2025 Tiago Deane</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							<li>&copy; 2025 Tiago Deane</li><li>Initial design: <a href="http://html5up.net">HTML5 UP</a></li>
 						</ul>
 					</div>
 
@@ -144,3 +143,31 @@
 
 	</body>
 </html>
+
+<!--
+<header>
+	<h2>Contact Me</h2>
+</header>
+<footer>
+	<ul class="items">
+		<li>
+			<h3>Email</h3>
+			<a href="mailto:tiagortg@gmail.com">tiagortg@gmail.com</a>
+		</li>
+		<li>
+			<h3>Others</h3>
+			<ul class="icons">
+				<li><a href="https://www.linkedin.com/in/tiago-deane-8053a5338/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span><span class="tooltip">Tiago Deane</span></a></li>
+				<li><a href="https://github.com/TiDeane" class="icon brands fa-github"><span class="label">GitHub</span><span class="tooltip">TiDeane</span></a></li>
+				<li><a href="https://discordapp.com/users/197405278172479498" class="icon brands fa-discord"><span class="label">Discord</span><span class="tooltip">tideane</span></a></li>
+				<li>
+					<a href="https://www.credly.com/users/tiago-deane-motta-e-silva" class="icon custom-icon">
+						<img src="images/newCredly2.png" alt="Credly" class="icon-img" />
+						<span class="label">Credly</span><span class="tooltip">Credly</span>
+					</a>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</footer>
+-->

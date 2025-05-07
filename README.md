@@ -18,3 +18,7 @@ TODO:
 - Others:
 	- [jQuery](https://jquery.com/)
 	- [Responsive Tools](https://github.com/ajlkn/responsive-tools)
+
+# License
+
+The website's design is licensed under the [CCA 3.0 license](https://html5up.net/license)
