@@ -1,6 +1,6 @@
 # Cloud-Resume
 
-In development: my attempt at the Cloud Resume challenge.
+In development: static website for the Cloud Resume challenge.
 
 TODO:
 - [ ] Finish static website
