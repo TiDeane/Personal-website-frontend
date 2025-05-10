@@ -22,3 +22,8 @@ TODO:
 # License
 
 The website's design is licensed under the [CCA 3.0 license](https://html5up.net/license)
+
+Changes in the design:
+- "Work" page was changed from a portfolio of photos into a curriculum.
+- "Contact" page was changed from a contact form to a list of contact links.
+- Regarding the previous two points, new additions to ``main.css`` are at the end of the file

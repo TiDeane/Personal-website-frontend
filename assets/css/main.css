@@ -1461,7 +1461,7 @@ input, select, textarea {
 			border-bottom: solid 2px #f4f4f4;
 		}
 
-/* Form */
+		/* Form */
 
 	form label {
 		display: block;
@@ -1766,105 +1766,6 @@ input, select, textarea {
 		.icon > .label {
 			display: none;
 		}
-
-/* Icons horizontal list (not in use, TODO: remove?) */
-
-	ul.icons {
-		cursor: default;
-		list-style: none;
-		padding-left: 0;
-	}
-
-		ul.icons li {
-			display: inline-block;
-		}
-
-			ul.icons li:last-child {
-				padding-right: 0;
-			}
-
-			ul.icons li .icon {
-				-moz-transition: background-color 0.25s ease-in-out;
-				-webkit-transition: background-color 0.25s ease-in-out;
-				-ms-transition: background-color 0.25s ease-in-out;
-				transition: background-color 0.25s ease-in-out;
-				width: 2.25rem;
-				height: 2.25rem;
-				text-align: center;
-				line-height: 2.25rem;
-				border-radius: 2.25rem;
-				color: #b87d83;
-				display: inline-block;
-			}
-
-				ul.icons li .icon:before {
-					font-size: 1.25rem;
-				}
-
-				ul.icons li .icon:hover {
-					background-color: rgba(144, 144, 144, 0.1);
-				}
-
-				/* Credly image icon (not in use, TODO: remove?) */
-			
-				ul.icons li .custom-icon {
-					width: 2.25rem;
-					height: 2.25rem;
-					display: inline-flex;
-					align-items: center;
-					justify-content: center;
-					border-radius: 2.25rem;
-					background-color: transparent;
-					transition: background-color 0.25s ease-in-out;
-				}
-				
-				ul.icons li .custom-icon:hover {
-					background-color: rgba(144, 144, 144, 0.1);
-				}
-				
-				ul.icons li .custom-icon .icon-img {
-					width: 1.05rem;
-					height: 1.05rem;
-					display: block;
-				}
-
-				/* Icon tooltips (not in use, TODO: remove?) */
-
-				.icon .tooltip {
-					visibility: hidden;
-					opacity: 0;
-					position: absolute;
-					background-color: #333;
-					color: #fff;
-					text-align: center;
-					border-radius: 4px;
-					padding: 0.3em 0.6em;
-					font-size: 0.75rem;
-					white-space: nowrap;
-					transform: translateX(-50%);
-					left: 50%;
-					top: calc(100% + 8px); /* 8px below the icon */
-					z-index: 10;
-					transition: opacity 0.2s ease-in-out;
-					pointer-events: none;
-				}
-				
-				.icon:hover .tooltip {
-					visibility: visible;
-					opacity: 1;
-				}
-
-				.icon .tooltip::after {
-					content: '';
-					display: block;
-					position: absolute;
-					top: -0.4em;
-					left: 50%;
-					margin-left: -0.6em;
-					border-bottom: solid 0.6em #222222;
-					border-left: solid 0.6em transparent;
-					border-right: solid 0.6em transparent;
-				}
 				
 
 /* Nav */
@@ -2291,9 +2192,11 @@ input, select, textarea {
 		}
 
 
+/* ORIGINAL DESIGN ENDS HERE */
+
 /* Home section visitor count */
 
-#visitor-count {
+#visitor-counter {
   position: absolute;
   bottom: 1em;
   left: 1em;
@@ -2316,7 +2219,7 @@ input, select, textarea {
 }
 
 .cv-left {
-  background-color: #b87d83;
+  background-color: #b87d83; /* maybe #003147 ? */
   width: 30%;
   padding: 2rem;
   color: #e0e0e0;
@@ -2332,15 +2235,92 @@ input, select, textarea {
 	order: 1;
 }
 
+.title.main {
+	text-transform: uppercase;
+  font-weight: 600;
+	letter-spacing: 1px;
+	margin-bottom: 10px;
+	font-family: 'Poppins', sans-serif;
+	border-bottom: 2px solid #b87d83;
+	color: #b87d83;
+}
+
 .title.aside {
-  color: #fff;
   text-transform: uppercase;
   font-weight: 600;
   font-size: 0.9em;
   letter-spacing: 1px;
   margin-bottom: 0px;
   font-family: 'Poppins', sans-serif;
-  border-bottom: 2px solid #fff;
+	/* remove border? */
+  border-bottom: 2px solid #fff; 
+  color: #fff;
+}
+
+.title.contact {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: 10px;
+  font-weight: 600;
+	font-family: 'Poppins', sans-serif;
+	border-bottom: 2px solid #b87d83;
+	color: #333;
+}
+
+
+.education-entry {
+  display: flex;
+  justify-content: space-between;
+	font-size: 1.5rem;
+  gap: 1rem;
+  margin-top: 1rem;
+  align-items: flex-start;
+}
+
+.edu-left, .edu-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.education-entry .icon {
+  margin-right: 0.4rem;
+  color: #b87d83;
+  font-size: 1.3rem; /* 1rem */
+	line-height: 1;
+}
+
+.edu-left {
+  font-weight: 300;
+	font-size: 0.9em;
+	line-height: 1.2;
+}
+
+.edu-text {
+	display: inline-block;
+	font-size: inherit;
+	align-items: center;
+	line-height: inherit;
+}
+
+.edu-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.2rem; /* adjust spacing if needed */
+}
+
+.edu-right {
+  font-weight: 500;
+  padding-left: 1rem;
+	padding-right: 1rem;
+	text-align: right;
+}
+
+.degree-text {
+	display: inline-block;
+	font-size: inherit;
+	line-height: 1.2;
 }
 
 .aside-section ul {
@@ -2421,12 +2401,108 @@ input, select, textarea {
 	color: #b87d83;
 }
 
-.contact-info ul li span {
-	font-weight: 300;
-}
-
 
 /* URL COLOR */
 a[href] {
 	color: #b87d83;
 }
+
+
+/* Icons horizontal list (not in use, TODO: remove?) */
+
+ul.icons {
+	cursor: default;
+	list-style: none;
+	padding-left: 0;
+}
+
+	ul.icons li {
+		display: inline-block;
+	}
+
+		ul.icons li:last-child {
+			padding-right: 0;
+		}
+
+		ul.icons li .icon {
+			-moz-transition: background-color 0.25s ease-in-out;
+			-webkit-transition: background-color 0.25s ease-in-out;
+			-ms-transition: background-color 0.25s ease-in-out;
+			transition: background-color 0.25s ease-in-out;
+			width: 2.25rem;
+			height: 2.25rem;
+			text-align: center;
+			line-height: 2.25rem;
+			border-radius: 2.25rem;
+			color: #b87d83;
+			display: inline-block;
+		}
+
+			ul.icons li .icon:before {
+				font-size: 1.25rem;
+			}
+
+			ul.icons li .icon:hover {
+				background-color: rgba(144, 144, 144, 0.1);
+			}
+
+			/* Credly image icon (not in use, TODO: remove?) */
+		
+			ul.icons li .custom-icon {
+				width: 2.25rem;
+				height: 2.25rem;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 2.25rem;
+				background-color: transparent;
+				transition: background-color 0.25s ease-in-out;
+			}
+			
+			ul.icons li .custom-icon:hover {
+				background-color: rgba(144, 144, 144, 0.1);
+			}
+			
+			ul.icons li .custom-icon .icon-img {
+				width: 1.05rem;
+				height: 1.05rem;
+				display: block;
+			}
+
+			/* Icon tooltips (not in use, TODO: remove?) */
+
+			.icon .tooltip {
+				visibility: hidden;
+				opacity: 0;
+				position: absolute;
+				background-color: #333;
+				color: #fff;
+				text-align: center;
+				border-radius: 4px;
+				padding: 0.3em 0.6em;
+				font-size: 0.75rem;
+				white-space: nowrap;
+				transform: translateX(-50%);
+				left: 50%;
+				top: calc(100% + 8px); /* 8px below the icon */
+				z-index: 10;
+				transition: opacity 0.2s ease-in-out;
+				pointer-events: none;
+			}
+			
+			.icon:hover .tooltip {
+				visibility: visible;
+				opacity: 1;
+			}
+
+			.icon .tooltip::after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: -0.4em;
+				left: 50%;
+				margin-left: -0.6em;
+				border-bottom: solid 0.6em #222222;
+				border-left: solid 0.6em transparent;
+				border-right: solid 0.6em transparent;
+			}

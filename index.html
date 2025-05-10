@@ -20,7 +20,7 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<a href="#" class="icon solid fa-home"><span>Home</span></a>
-						<a href="#CV" class="icon solid fa-folder"><span>Curriculum</span></a>
+						<a href="#CV" class="icon solid fa-user-graduate"><span>Curriculum</span></a>
 						<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
 					</nav>
 
@@ -37,7 +37,7 @@
 									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
 									<img src="images/me.jpg" alt="" />
 								</a>
-								<div id="visitor-count">TODO: add number of visitors with backend... (also, maybe put contact icons here?)</div>
+								<div id="visitor-counter">Number of visitors: <span id="visitor-count"></span> (also, maybe put contact icons here?)</div>
 							</article>
 
 						<!-- Curriculum -->
@@ -59,8 +59,8 @@
 											</ul>
 											<h3 class = "title aside">Skills</h3>
 											<ul>
-												<li><span class="text">Backend: abc</span></li>
-												<li><span class="text">Frontend: xyz</span></li>
+												<li><span class="text">Backend: Python, Java, C, C++, SQL, Groovy</span></li>
+												<li><span class="text">Frontend: HTTP, CSS, JavaScript, Vue.js</span></li>
 												<li><span class="text">AWS: S3, EC2, etc</span></li>
 											</ul>
 											<h3 class = "title aside">Languages</h3>
@@ -77,31 +77,39 @@
 										</div>
 									</div>
 
-									<!-- Main Content Section -->
-									<div class="cv-right">
-										<div class="education-section">
-											<h3 class = "title">Education</h3>
-											<ul>
-												<!-- TODO: for this list, maybe "list-style: none" and use IST's icon? -->
-												<li>
-													<h5>2024-2026 (expected)</h5>
-													<h4>Master's in Computer Science and Engineering</h4> 
-													<h4>Instituto Superior Técnico</h4>
-												</li>
-												<li>
-													<h5>2021-2024</h5>
-													<h4>Bachelor's in Computer Science and Engineering</h4>
-													<h4>Instituto Superior Técnico</h4>
-												</li>
-											</ul>
-										</div>
-									</div>
+											<div class="cv-right">
+												<div class="main-section">
+													<h3 class="title main">
+														<span class="icon solid fa-graduation-cap" style="margin-right: 0.5rem;"></span>
+														Education
+													</h3>
+
+													<div class="education-entry">
+														<div class="edu-left">
+															<div class="edu-row">
+																<span class="icon solid fa-calendar-alt"></span>
+																<span class="edu-text">2024–2026</span>
+															</div>
+															<div class="edu-row">
+																<span class="icon solid fa-map-marker-alt"></span>
+																<span class="edu-text">Técnico Lisboa, Portugal</span>
+															</div>
+														</div>
+														<div class="edu-right">
+															<span class="degree-text">Master’s in Computer Science and Engineering (MEIC-A)</span>
+														</div>
+													</div>
+
+													<!-- Here, list relevant projects-->
+												</div>
+											</div>
+
 							</article>
 
 						<!-- Contact -->
 							<article id="contact" class="panel">
 								<div class="contact-info">
-									<h3 class = "title">Contact Info</h3>
+									<h3 class = "title contact">Contact Info</h3>
 									<ul>
 										<li>
 											<span class="icon solid fa-envelope"></span>
@@ -144,7 +152,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+			<script src="assets/js/visitorCount.js"></script>
 	</body>
 </html>
 
