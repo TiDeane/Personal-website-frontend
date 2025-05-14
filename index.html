@@ -20,7 +20,7 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<a href="#" class="icon solid fa-home"><span>Home</span></a>
-						<a href="#CV" class="icon solid fa-user-graduate"><span>Curriculum</span></a>
+						<a href="#CV" class="icon solid fa-book"><span>Curriculum</span></a>
 						<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
 					</nav>
 
@@ -31,13 +31,13 @@
 							<article id="home" class="panel intro">
 								<header>
 									<h1>Tiago Deane</h1> <!-- TODO: talvez pôr linha em baixo disso pra separar visualmente o nome do profile? -->
-									<p>TODO: Profile here (team skills, "passion" wow!)</p> 
+									<span class="text">TODO: Profile here (team skills, "passion" wow!)</span> <!-- TODO: style this-->
 								</header>
 								<a href="#CV" class="jumplink pic">
 									<span class="arrow icon solid fa-chevron-right"><span>See my work</span></span>
 									<img src="images/me.jpg" alt="" />
 								</a>
-								<div id="visitor-counter">Number of visitors: <span id="visitor-count"></span> (also, maybe put contact icons here?)</div>
+								<div id="visitor-counter">Number of visits: <span id="visitor-count"></span> (also, maybe put contact icons here?)</div>
 							</article>
 
 						<!-- Curriculum -->
@@ -60,7 +60,7 @@
 											<h3 class = "title aside">Skills</h3>
 											<ul>
 												<li><span class="text">Backend: Python, Java, C, C++, SQL, Groovy</span></li>
-												<li><span class="text">Frontend: HTTP, CSS, JavaScript, Vue.js</span></li>
+												<li><span class="text">Frontend: HTTP, CSS, JavaScript, Vue.js, Cypress</span></li>
 												<li><span class="text">AWS: S3, EC2, etc</span></li>
 											</ul>
 											<h3 class = "title aside">Languages</h3>
@@ -77,32 +77,103 @@
 										</div>
 									</div>
 
-											<div class="cv-right">
-												<div class="main-section">
-													<h3 class="title main">
-														<span class="icon solid fa-graduation-cap" style="margin-right: 0.5rem;"></span>
-														Education
-													</h3>
+									<div class="cv-right">
+										<div class="main-section">
+											<h3 class="title main">
+												<span class="icon solid fa-graduation-cap" style="margin-right: 0.5rem;"></span>
+												Education
+											</h3>
 
-													<div class="education-entry">
-														<div class="edu-left">
-															<div class="edu-row">
-																<span class="icon solid fa-calendar-alt"></span>
-																<span class="edu-text">2024–2026</span>
-															</div>
-															<div class="edu-row">
-																<span class="icon solid fa-map-marker-alt"></span>
-																<span class="edu-text">Técnico Lisboa, Portugal</span>
-															</div>
-														</div>
-														<div class="edu-right">
-															<span class="degree-text">Master’s in Computer Science and Engineering (MEIC-A)</span>
-														</div>
+											<div class="education-entry">
+												<div class="edu-left">
+													<div class="edu-row">
+														<span class="icon solid fa-calendar-alt"></span>
+														<span class="edu-text">2024–2026 (expected)</span>
 													</div>
-
-													<!-- Here, list relevant projects-->
+													<div class="edu-row"> 
+														<img src="images/tecnico.svg" alt="IST Icon" class="icon-svg" />
+														<span class="edu-text">Instituto Superior Técnico</span>
+													</div>
+													<div class="edu-row">
+														<span class="icon solid fa-map-marker-alt"></span>
+														<span class="edu-text">Lisbon, Portugal</span>
+													</div>
+												</div>
+												<div class="edu-right">
+													<span class="degree-text">Master’s in Computer Science and Engineering (MEIC-A)</span>
 												</div>
 											</div>
+											<ul class="outer-list">
+												<li>
+													<span class="text">Specializing in Software Engineering and Distributed Systems</span>
+												</li>
+												<li>
+													<span class="text">Some interesting projects (placeholders):</span>
+													<ul>
+														<li>
+															<span class="text">Software Architecture: </span>
+															<a href="https://drive.google.com/file/d/1ynopk11kCrzBkzTSMUZu9iji_91PcrWR/view?usp=sharing">Web Crawler Case Study</a>
+														</li>
+														<li>
+															<span class="text">Software Security [Python]: </span>
+															<a href="https://github.com/TiDeane/Js-Vulnerabilities">JavaScript Vulnerability Detection</a>
+														</li>
+														<li>
+															<span class="text">Advanced Programming (metaprogramming in Julia): </span>
+															<a href="https://github.com/TiDeane/Julia-Exceptions">Julia Restarts</a>
+														</li>
+													</ul>
+												</li>
+											</ul>
+
+											<div class="education-entry">
+												<div class="edu-left">
+													<div class="edu-row">
+														<span class="icon solid fa-calendar-alt"></span>
+														<span class="edu-text">2021–2024</span>
+													</div>
+													<div class="edu-row"> 
+														<img src="images/tecnico.svg" alt="IST Icon" class="icon-svg" />
+														<span class="edu-text">Instituto Superior Técnico</span>
+													</div>
+													<div class="edu-row">
+														<span class="icon solid fa-map-marker-alt"></span>
+														<span class="edu-text">Lisbon, Portugal</span>
+													</div>
+												</div>
+												<div class="edu-right">
+													<span class="degree-text">Bachelor's in Computer Science and Engineering (LEIC-A)</span>
+												</div>
+											</div>
+											<ul class="outer-list last">
+												<li>
+													<span class="text">Some relevant projects (placeholders):</span>
+													<ul>
+														<li>
+															<span class="text">Software Engineering [Java, Groovy, Vue.js, Cypress]: </span>
+															<a href="https://github.com/TiDeane/HumanaEthica-ES">HumanaEthica</a>
+														</li>
+														<li>
+															<span class="text">Databases [SQL, Python, HTML]: </span>
+															<a href="https://github.com/TiDeane/Web-App-Database-Manager">Database Manager</a>
+														</li>
+														<li>
+															<span class="text">Compilers [C++]: </span>
+															<a href="https://github.com/TiDeane/TIL-Compiler">TIL Compiler</a>
+														</li>
+													</ul>
+												</li>
+											</ul>
+
+											<h3 class="title main">
+												<span class="icon solid fa-paint-brush" style="margin-right: 0.5rem;"></span>
+												Open Source
+											</h3>
+											<span class="os-text">For my Bachelor's integrated project I briefly worked on <a href="https://airflow.apache.org/">Apache Airflow</a>, fixing a <a href="https://github.com/apache/airflow/pull/38502">bug</a> and implementing a <a href="https://github.com/apache/airflow/pull/39564">feature</a>, along with fixing or implementing tests for both.</span>
+
+											<!-- what more...? -->
+										</div>
+									</div>
 
 							</article>
 

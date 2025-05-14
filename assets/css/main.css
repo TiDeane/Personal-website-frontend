@@ -2194,6 +2194,7 @@ input, select, textarea {
 
 /* ORIGINAL DESIGN ENDS HERE */
 
+
 /* Home section visitor count */
 
 #visitor-counter {
@@ -2208,6 +2209,8 @@ input, select, textarea {
 }
 
 
+/* CV section */
+
 .panel#CV {
   padding: 0;
 }
@@ -2219,7 +2222,7 @@ input, select, textarea {
 }
 
 .cv-left {
-  background-color: #b87d83; /* maybe #003147 ? */
+  background-color: #b87d83; /* maybe a lighter #003147 ? */
   width: 30%;
   padding: 2rem;
   color: #e0e0e0;
@@ -2235,13 +2238,13 @@ input, select, textarea {
 	order: 1;
 }
 
-.title.main {
+.title.main { /* Not sure if I'm happy with this */
 	text-transform: uppercase;
   font-weight: 600;
-	letter-spacing: 1px;
-	margin-bottom: 10px;
+	/*letter-spacing: 1px;*/
+	margin-bottom: 30px;
 	font-family: 'Poppins', sans-serif;
-	border-bottom: 2px solid #b87d83;
+	border-bottom: 1px solid #003147;
 	color: #b87d83;
 }
 
@@ -2252,21 +2255,9 @@ input, select, textarea {
   letter-spacing: 1px;
   margin-bottom: 0px;
   font-family: 'Poppins', sans-serif;
-	/* remove border? */
-  border-bottom: 2px solid #fff; 
+  border-bottom: 1px solid #fff; 
   color: #fff;
 }
-
-.title.contact {
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	margin-bottom: 10px;
-  font-weight: 600;
-	font-family: 'Poppins', sans-serif;
-	border-bottom: 2px solid #b87d83;
-	color: #333;
-}
-
 
 .education-entry {
   display: flex;
@@ -2274,6 +2265,7 @@ input, select, textarea {
 	font-size: 1.5rem;
   gap: 1rem;
   margin-top: 1rem;
+  margin-bottom: 1rem;
   align-items: flex-start;
 }
 
@@ -2307,7 +2299,21 @@ input, select, textarea {
 .edu-row {
   display: flex;
   align-items: center;
-  margin-bottom: 0.2rem; /* adjust spacing if needed */
+  margin-bottom: 0.2rem;
+}
+
+.edu-row .icon {
+  color: #b87d83;
+}
+
+.icon-svg {
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-right: 0.4rem;
+  margin-left: -0.1rem;
+  vertical-align: middle;
+  display: inline-block;
+  object-fit: contain;
 }
 
 .edu-right {
@@ -2358,6 +2364,33 @@ input, select, textarea {
   color: #fff;
 }
 
+.main-section ul li {
+	margin-left: 40px;
+	font-size: 0.9em;
+	line-height: 1.5;
+}
+
+.outer-list {
+	padding-bottom: 2.5rem;
+	border-bottom: 1px solid rgba(0, 49, 71, 0.25);
+}
+
+.outer-list.last {
+	border-bottom: none;
+}
+
+.outer-list ul {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.os-text {
+	display: inline-block;
+	font-size: 1.3rem;
+	align-items: center;
+	line-height: 1.3;
+}
 
 @media screen and (max-width: 980px) {
   .cv-panel {
@@ -2381,6 +2414,18 @@ input, select, textarea {
   }
 }
 
+
+/* Contact Info section */
+
+.title.contact {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: 10px;
+  font-weight: 600;
+	font-family: 'Poppins', sans-serif;
+	border-bottom: 1px solid #003147;
+	color: #b87d83;
+}
 
 .contact-info ul {
 	position: relative;
