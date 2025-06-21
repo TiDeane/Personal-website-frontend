@@ -1,13 +1,13 @@
 # Cloud-Resume
 
-In development: static website for the Cloud Resume challenge.
+In development: static website frontend for the Cloud Resume challenge.
 
 TODO:
-- [ ] Finish static website
-- [ ] Host static website on S3, get a CloudFront distribution
+- [x] Finish static website's design
+- [x] Host static website on S3, get a CloudFront distribution
 - [ ] Use API Backend to count visitors (maybe API Gateway + Lambda + DynamoDB ?)
-- [ ] Buy domain name
-- [ ] Use Github Actions (?) to automatically update website when new pushes occur in the repository
+- [ ] Get a domain name
+- [x] Use Github Actions to automatically update website when new pushes occur in the repository
 - [ ] Write my process over the development of this project, with the reasoning for each decision
 
 
@@ -21,9 +21,9 @@ TODO:
 
 # License
 
-The website's design is licensed under the [CCA 3.0 license](https://html5up.net/license)
+The website's original design is licensed under the [CCA 3.0 license](https://html5up.net/license).
 
-Changes in the design:
-- "Work" page was changed from a portfolio of photos into a curriculum.
-- "Contact" page was changed from a contact form to a list of contact links.
-- Regarding the previous two points, new additions to ``main.css`` are at the end of the file
+Changes:
+- The "Home" page is essentially unchanged, except for the addition of a visitor counter.
+- The "Work" page was completely changed, from a portfolio of photos to a curriculum. The section's icon was changed as well.
+- The "Contact" page was completely changed, from a contact form to a list of contact links.

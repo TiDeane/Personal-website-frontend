@@ -2395,7 +2395,7 @@ input, select, textarea {
 }
 
 .text.personal {
-	font-size: 0.8em;
+	font-size: 0.9em;
 	line-height: 1.2;
 }
 
@@ -2442,13 +2442,13 @@ input, select, textarea {
 .contact-info ul li {
 	position: relative;
 	list-style: none;
-	margin: 10px 0;
+	margin: 0.35em 0;
 }
 
 .contact-info ul li .icon {
 	display: inline-block;
-	width: 50px;
-	font-size: 25px;
+	width: 2em;
+	font-size: 0.95em;
 	text-align: center;
 	color: #b87d83;
 }

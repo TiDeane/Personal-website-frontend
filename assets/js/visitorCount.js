@@ -8,5 +8,3 @@ n++;
 localStorage.setItem("visitor_counter", n);
 
 document.getElementById('visitor-count').textContent = n;
-
-/* also, maybe store visitor's country and display top countries on a stats page? */
