@@ -1,5 +1,5 @@
 /* Increment visitor count by country */
-fetch('https://ttkp7mg2o7.execute-api.eu-west-1.amazonaws.com/track', {
+fetch('https://d3f2t5moya606c.cloudfront.net/track', {
   method: 'POST'
 }).catch(err =>
   console.error('Failed to update country count:', err)
