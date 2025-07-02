@@ -22,4 +22,4 @@ jobs:
 
       - name: Sync to S3
         run: |
-          aws s3 sync . s3://cloud-resume-frontend-807064456584 --delete --exclude ".git/*"
+          aws s3 sync . s3://cloud-resume-frontend-807064456584 --region eu-west-1 --delete --exclude ".git/*"

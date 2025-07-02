@@ -1,10 +1,10 @@
-/* later on, store and query from DynamoDB */
-var n = localStorage.getItem('visitor_counter');
-if (n === null) {
-  n = 0;
-}
-n++;
+/* Call API Gateway to increment visitor count by country */
+fetch('https://ttkp7mg2o7.execute-api.eu-west-1.amazonaws.com/track', { method: 'POST' })
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
+    document.getElementById('visitor-message').textContent = data.message;
+  }).catch(err => console.error('Failed to update country count:', err));
 
-localStorage.setItem("visitor_counter", n);
-
-document.getElementById('visitor-count').textContent = n;
+/* Fetch top visitors by country */
+//TODO
