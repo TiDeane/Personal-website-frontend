@@ -22,4 +22,10 @@ jobs:
 
       - name: Sync to S3
         run: |
-          aws s3 sync . s3://cloud-resume-frontend-807064456584 --region eu-west-1 --delete --exclude ".git/*"
+          aws s3 sync . s3://cloud-resume-frontend-807064456584 --region ${{ secrets.AWS_REGION }}  --delete --exclude ".git/*"
+      
+      - name: Invalidate CloudFront Cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"
