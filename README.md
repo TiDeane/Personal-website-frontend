@@ -1,6 +1,6 @@
 # Cloud Resume Frontend
 
-This project contains the static website frontend for the Cloud Resume Challenge. The website is hosted on an S3 bucket and distributed via CloudFront. Pushes to the repository are automatically deployed via Github Actions. The website interacts with a [serverless backend](https://github.com/TiDeane/Cloud-Resume-backend) that utilizes API Gateway and AWS Lambda functions, which is tested and deployed automatically using the AWS Serverless Application Model (SAM).
+This project contains my static website frontend for the Cloud Resume Challenge. The website is hosted on an S3 bucket and distributed via CloudFront. Pushes to the repository are automatically deployed via Github Actions. The website interacts with a [serverless backend](https://github.com/TiDeane/Cloud-Resume-backend) that utilizes API Gateway and AWS Lambda functions, which is tested and deployed automatically using the AWS Serverless Application Model (SAM).
 
 In the future I will write a detailed report on my process over the development of this project, with the reasoning for each decision.
 
