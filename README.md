@@ -7,7 +7,7 @@ In the future I will write a detailed report on my process over the development 
 TODO:
 - [x] Finish static website's design
 - [x] Host static website on S3, get a CloudFront distribution
-- [ ] Get a domain name
+- [x] Get a domain name
 - [x] Use Github Actions to automatically update website when new pushes occur in the repository
 - [x] Implement [serverless backend](https://github.com/TiDeane/Cloud-Resume-backend) to count visitors by country (CloudFront custom headers + API Gateway + Lambda + DynamoDB)
 - [x] Write SAM template for automated deployment of backend
