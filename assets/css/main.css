@@ -2457,7 +2457,11 @@ input, select, textarea {
 	position: relative;
 	list-style: none;
 	margin: 0.35em 0;
-	flex-wrap: nowrap;
+}
+
+.contact-info ul li a {
+	word-break: break-all;
+	overflow-wrap: anywhere;
 }
 
 .contact-info ul li .icon {
