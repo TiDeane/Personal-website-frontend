@@ -9,12 +9,12 @@ TODO:
 - [x] Use Github Actions to automatically update website when new pushes occur in the repository
 - [x] Implement [serverless backend](https://github.com/TiDeane/Cloud-Resume-backend) to count visitors by country (CloudFront custom headers + API Gateway + Lambda + DynamoDB)
 - [x] Write SAM template for automated deployment of backend
-- [ ] Write my process over the development of this project, with the reasoning for each decision
 
+Having finished this project, I can say that I'm proud of it and happy with how it turned out. I started this challenge as practice for my AWS Certified Developer (Associate) exam, which I easily passed, and because I wanted more experience with base JavaScript and CSS. Now that I have more experience, I'll temporarily turn this branch into a (WIP) and I'll slowly start working on a new version of the website, built with newer frameworks. I'm very interested in Tailwind CSS which I'll definitely use, and as for the JavaScript framework I think I'll try out Astro. Thank you for reading!
 
 ## Credits:
 
-- Initial website design: [HTML5 UP](https://html5up.net/license)
+- Initial Design: [HTML5 UP](https://html5up.net/)
 - Icons: [Font Awesome](https://fontawesome.com/)
 - Others:
 	- [jQuery](https://jquery.com/)
