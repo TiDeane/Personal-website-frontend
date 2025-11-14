@@ -1,0 +1,116 @@
+---
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+
+const {
+  items = [],
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+
+  duration = 50,
+  
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+
+---
+
+<!-- Note: this version contains two Marquees scrolling in different directions-->
+
+<WidgetWrapper
+  id={id}
+  isDark={isDark}
+  containerClass={`max-w-8xl pt-12 md:pt-16 lg:pt-10 pb-0 md:pb-0 lg:pb-0 ${classes?.container ?? ''}`}
+  bg={bg}
+>
+  <Headline
+    title={title}
+    subtitle={subtitle}
+    tagline={tagline}
+    classes={{
+      container: "text-left rtl:text-right max-w-3xl mb-12 md:mb-12 md:mx-auto",
+          title: "text-3xl lg:text-4xl",
+          ...((classes?.headline as object) ?? {}),
+    }}
+  />
+  
+  <div class="w-full inline-flex flex-nowrap pb-3 overflow-hidden lg:[mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+    <ul class="flex items-center justify-center md:justify-start [&_li]:mx-1 [&_img]:max-w-none animate-infinite-scroll"
+        style={`animation-duration: ${duration}s`}>
+      {items.map((item) => (
+        <li class="flex items-center gap-3 px-5 py-2 rounded-full border dark:border-orange-300/60 border-orange-300 whitespace-nowrap 
+                   transition hover:dark:border-orange-100 hover:dark:bg-gray-900/50 hover:bg-gray-900/5">
+          <img
+            src={item.src}
+            alt={item.alt ?? item.label}
+            class="h-8 sm:h-6 lg:h-8 w-auto"
+          />
+          <span class="text-3xl font-medium text-black dark:text-gray-100">
+            {item.label}
+          </span>
+        </li>
+      ))}
+    </ul>
+
+    <!-- Duplicate list for seamless looping -->
+    <ul class="flex items-center justify-center md:justify-start [&_li]:mx-1 [&_img]:max-w-none animate-infinite-scroll" aria-hidden="true"
+        style={`animation-duration: ${duration}s`}>
+      {items.map((item) => (
+        <li class="flex items-center gap-3 px-5 py-2 rounded-full border dark:border-orange-300/60 border-orange-300 whitespace-nowrap 
+                   transition hover:dark:border-orange-100 hover:dark:bg-gray-900/50 hover:bg-gray-900/5">
+          <img
+            src={item.src}
+            alt={item.alt ?? item.label}
+            class="h-8 sm:h-6 lg:h-8 w-auto"
+          />
+          <span class="text-3xl font-medium text-black dark:text-gray-100">
+            {item.label}
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <!-- Second Marquee -->
+
+  <div class="w-full inline-flex flex-nowrap pb-12 overflow-hidden lg:[mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+    <ul class="flex items-center justify-center md:justify-start [&_li]:mx-1 [&_img]:max-w-none animate-infinite-scroll-reverse"
+        style=`animation-delay: -${duration/2}s; animation-duration: ${duration}s`>
+      {items.map((item) => (
+        <li class="flex items-center gap-3 px-5 py-2 rounded-full border dark:border-orange-300/60 border-orange-300 whitespace-nowrap 
+                   transition hover:dark:border-orange-100 hover:dark:bg-gray-900/50 hover:bg-gray-900/5">
+          <img
+            src={item.src}
+            alt={item.alt ?? item.label}
+            class="h-8 sm:h-6 lg:h-8 w-auto"
+          />
+          <span class="text-3xl font-medium text-black dark:text-gray-100">
+            {item.label}
+          </span>
+        </li>
+      ))}
+    </ul>
+
+    <!-- Duplicate list for seamless looping -->
+    <ul class="flex items-center justify-center md:justify-start [&_li]:mx-1 [&_img]:max-w-none animate-infinite-scroll-reverse" aria-hidden="true"
+      style=`animation-delay: -${duration/2}s; animation-duration: ${duration}s`>
+      {items.map((item) => (
+        <li class="flex items-center gap-3 px-5 py-2 rounded-full border dark:border-orange-300/60 border-orange-300 whitespace-nowrap 
+                   transition hover:dark:border-orange-100 hover:dark:bg-gray-900/50 hover:bg-gray-900/5">
+          <img
+            src={item.src}
+            alt={item.alt ?? item.label}
+            class="h-8 sm:h-6 lg:h-8 w-auto"
+          />
+          <span class="text-3xl font-medium text-black dark:text-gray-100">
+            {item.label}
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</WidgetWrapper>
+

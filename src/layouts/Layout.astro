@@ -1,0 +1,40 @@
+---
+import '~/assets/styles/tailwind.css';
+
+import CommonMeta from '~/components/common/CommonMeta.astro';
+import CustomStyles from '~/components/CustomStyles.astro';
+import ApplyColorMode from '~/components/common/ApplyColorMode.astro';
+import BasicScripts from '~/components/common/BasicScripts.astro';
+
+// Comment the line below to disable View Transitions
+import { ClientRouter } from 'astro:transitions';
+---
+
+<!doctype html>
+<html class="2xl:text-[20px]">
+  <head>
+    <CommonMeta />
+    <!-- <Favicons /> -->
+    <CustomStyles />
+    <ApplyColorMode />
+    <!-- Comment the line below to disable View Transitions -->
+    <ClientRouter fallback="swap" />
+  </head>
+
+  <script type="module" src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <body class="antialiased text-default bg-page tracking-tight
+               bg-[url('/bg/nnnoise_inverted.svg')]
+               dark:bg-[url('/bg/nnnoise.svg')] bg-repeat bg-[length:700px_700px] bg-fixed">
+    <slot />
+
+    <script>
+      // The backend is just a simple API Gateway + Lambda + DynamoDB, and keeps track of visits to the website per country
+      fetch('https://tiagodeane.com/track', {
+        method: 'POST'
+      }).catch(console.error);
+    </script>
+
+    <BasicScripts />
+  </body>
+</html>
