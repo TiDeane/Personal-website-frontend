@@ -34,7 +34,7 @@ jobs:
       - name: Sync to S3
         run: |
           aws s3 sync ./dist s3://cloud-resume-frontend-807064456584 \
-            --region ${{ secrets.AWS_REGION }}
+            --region ${{ secrets.AWS_REGION }} \
             --delete \
             --exclude ".git/*"
       
