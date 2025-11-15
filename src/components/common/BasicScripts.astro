@@ -162,6 +162,8 @@ import { UI } from 'astrowind:config';
     onLoad();
     onPageShow();
   });
+  
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
 </script>
 
 <script is:inline>
@@ -265,4 +267,11 @@ import { UI } from 'astrowind:config';
   document.addEventListener('astro:after-swap', () => {
     Observer.start();
   });
+</script>
+
+<script is:inline>
+  /* Interacts with a simple backend that keeps track of the number of visits to the website, per country */
+  fetch('https://tiagodeane.com/track', {
+    method: 'POST'
+  }).catch(console.error);
 </script>

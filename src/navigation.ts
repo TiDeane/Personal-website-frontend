@@ -7,6 +7,6 @@ export const footerData = {
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/TiDeane' },
   ],
   footNote: `
-    &copy; 2025 Tiago Deane</a> · All rights reserved.
+    &copy; <span id="currentYear"></span> Tiago Deane · All rights reserved.
   `,
 };
