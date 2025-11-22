@@ -28,13 +28,6 @@ import { ClientRouter } from 'astro:transitions';
                dark:bg-[url('/bg/nnnoise.svg')] bg-repeat bg-[length:700px_700px] bg-fixed">
     <slot />
 
-    <script>
-      // The backend is just a simple API Gateway + Lambda + DynamoDB, and keeps track of visits to the website per country
-      fetch('https://tiagodeane.com/track', {
-        method: 'POST'
-      }).catch(console.error);
-    </script>
-
     <BasicScripts />
   </body>
 </html>
