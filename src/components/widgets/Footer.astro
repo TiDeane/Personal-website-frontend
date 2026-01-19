@@ -25,39 +25,18 @@ const API_URL = "https://tiagodeane.com/top";
     class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300 intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
   >
     <div class="md:flex md:items-center md:justify-between py-4 md:py-6">
-      {
-        socialLinks?.length ? (
-          <ul class="flex mb-4 md:order-1 -ml-2 md:ml-4 md:mb-0 rtl:ml-0 rtl:-mr-2 rtl:md:ml-0 rtl:md:mr-4">
-            {socialLinks.map(({ ariaLabel, href, text, icon }) => (
-              <li>
-                <a
-                  class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
-                  aria-label={ariaLabel}
-                  href={href}
-                >
-                  {icon && <Icon name={icon} class="w-5 h-5" />}
-                  <Fragment set:html={text} />
-                </a>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          ''
-        )
-      }
+      
+      <div id="visitor-container" class="hidden md:hidden md:inline-flex items-center text-xs text-gray-500 dark:text-slate-400">
+        <span class="flex h-2 w-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
+        <span id="visitor-message"></span>
+      </div>
 
-      <div class="text-sm mr-4 dark:text-muted">
-        <div class="flex flex-col-reverse items-start md:flex-row md:items-center gap-4">
-          <div class="whitespace-nowrap">
-            <Fragment set:html={footNote} />
-          </div>
-          
-          <div id="visitor-container" class="hidden md:data-[loaded=true]:inline-flex items-center text-xs text-gray-500 dark:text-slate-400 md:border-l border-gray-300 dark:border-slate-700 md:pl-4">
-            <span class="flex h-2 w-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
-            <span id="visitor-message"></span>
-          </div>
+      <div class="text-sm dark:text-muted mt-2 md:mt-0">
+        <div class="whitespace-nowrap">
+          <Fragment set:html={footNote} />
         </div>
       </div>
+
     </div>
   </div>
 </footer>
@@ -93,7 +72,7 @@ const API_URL = "https://tiagodeane.com/top";
         });
         
         message.textContent = `Top visitors: ${countries.join(', ')}`;
-        container.setAttribute('data-loaded', 'true');
+        container.classList.remove('md:hidden');
       }
     } catch (error) {
       console.log('Error: analytics unavailable');
