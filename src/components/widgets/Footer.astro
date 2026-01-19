@@ -37,6 +37,29 @@ const API_URL = "https://tiagodeane.com/top";
         </div>
       </div>
 
+      <div id="social-links" class="hidden">
+        {
+          socialLinks?.length ? (
+            <ul class="flex mb-4 md:order-1 -ml-2 md:ml-4 md:mb-0 rtl:ml-0 rtl:-mr-2 rtl:md:ml-0 rtl:md:mr-4">
+              {socialLinks.map(({ ariaLabel, href, text, icon }) => (
+                <li>
+                  <a
+                    class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+                    aria-label={ariaLabel}
+                    href={href}
+                  >
+                    {icon && <Icon name={icon} class="w-5 h-5" />}
+                    <Fragment set:html={text} />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            ''
+          )
+        }
+      </div>
+      
     </div>
   </div>
 </footer>
@@ -57,11 +80,13 @@ const API_URL = "https://tiagodeane.com/top";
 
   async function fetchStats() {   
     const container = document.getElementById('visitor-container');
+    const socials = document.getElementById('social-links');
     const message = document.getElementById('visitor-message');
     
     try {
       const response = await fetch(API_URL);
       if (!response.ok) throw new Error('Failed when fetching top countries from API Gateway');
+      throw new Error('Failed when fetching top countries from API Gateway');
 
       const data = await response.json();
 
@@ -75,6 +100,7 @@ const API_URL = "https://tiagodeane.com/top";
         container.classList.remove('md:hidden');
       }
     } catch (error) {
+      socials.classList.remove('hidden');
       console.log('Error: analytics unavailable');
     }
   }
