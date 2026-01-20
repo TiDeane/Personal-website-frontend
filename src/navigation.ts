@@ -2,7 +2,7 @@ export const headerData = {};
 
 export const footerData = {
   socialLinks: [
-    { ariaLabel: 'Email', icon: 'tabler:mail', href: 'mailto:tiagortg@gmail.com' },
+    { ariaLabel: 'Email', icon: 'tabler:mail', href: 'mailto:tiagodeane@gmail.com' },
     { ariaLabel: 'Linkedin', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/in/tiago-deane/' },
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/TiDeane' },
   ],

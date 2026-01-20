@@ -5,7 +5,6 @@ import Header from '~/components/widgets/Header.astro';
 import Hero2 from '~/components/widgets/Hero2.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Marquee from '~/components/widgets/Marquee.astro';
-import Marquee2 from '~/components/widgets/Marquee2.astro';
 import Certifications from '~/components/widgets/Certifications.astro';
 import ContactSocial from '~/components/widgets/ContactSocial.astro';
 import LottiePlayer from '~/components/common/LottiePlayer.astro';
@@ -114,7 +113,7 @@ const certs = [
     id="skills"
     title="Skills & Technologies"
     items={logos}
-    duration="20"
+    duration={20}
     classes={{ container: ''}}
   >
     <Fragment slot="bg">
@@ -138,12 +137,12 @@ const certs = [
   <ContactSocial
     id="contact"
     title="Contact me"
-    socials={[
+    items={[
       // Note: maybe include Discord?
       {
         label: 'Email',
         icon: 'tabler:mail',
-        url: 'mailto:tiagortg@gmail.com'
+        url: 'mailto:tiagodeane@gmail.com'
       },
       {
         label: 'Github',

@@ -37,6 +37,7 @@ const API_URL = "https://tiagodeane.com/top";
         </div>
       </div>
 
+      <!-- "hidden" class is removed if API Gateway fetch fails -->
       <div id="social-links" class="hidden">
         {
           socialLinks?.length ? (
@@ -66,7 +67,7 @@ const API_URL = "https://tiagodeane.com/top";
 
 
 <!-- Top countries by visitor count display -->
-<script define:vars={{ API_URL }}>
+<script define:vars={{ API_URL }} is:inline>
   
   // from "https://dev.to/jorik/country-code-to-flag-emoji-a21"
   const getFlagEmoji = (countryCode) => {
@@ -90,7 +91,7 @@ const API_URL = "https://tiagodeane.com/top";
       const data = await response.json();
 
       if (data?.topCountries?.length > 0) {
-        const countries = data.topCountries.map((c, index) => {
+        const countries = data.topCountries.map(c => {
           const flag = getFlagEmoji(c.countryCode);
           return `${flag} ${c.countryName} (${c.count})`;
         });

@@ -155,7 +155,7 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
 
 <script>
   let lastScrollY = window.scrollY;
-  const header = document.getElementById('header');
+  const header = document.getElementById('header')!;
 
   const controlHeader = () => {
     const currentScrollY = window.scrollY;

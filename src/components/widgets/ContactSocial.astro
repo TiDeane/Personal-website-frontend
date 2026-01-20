@@ -2,12 +2,13 @@
 import { Icon } from 'astro-icon/components';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Headline from '~/components/ui/Headline.astro';
+import type { ContactSocial as Props } from '~/types';
 
 const {
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
   tagline = await Astro.slots.render('tagline'),
-  socials = [],
+  items = [],
 
   id,
   isDark = false,
@@ -33,7 +34,7 @@ const {
       <div class="w-60 h-[2px] bg-gray-300 dark:bg-gray-700 mx-auto mb-6 rounded"></div>
 
       <ul class="flex flex-wrap justify-center gap-1 md:gap-1 lg:gap-1 list-none">
-        {socials.map((item) => (
+        {items.map((item) => (
           <li class="inline-flex self-center intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade intersect-quarter">
             {item.url ? (
               <a

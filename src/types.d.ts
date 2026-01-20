@@ -29,6 +29,18 @@ export interface Item {
   image?: Image;
 }
 
+export interface ContactSocialItem {
+  label: string;
+  url: string;
+  icon: string;
+}
+
+export interface MarqueeItem {
+  label: string;
+  src?: string;
+  alt?: string;
+}
+
 // COMPONENTS
 export interface CallToAction extends Omit<HTMLAttributes<'a'>, 'slot'> {
   variant?: 'primary' | 'secondary' | 'tertiary' | 'link';
@@ -67,4 +79,13 @@ export interface Content extends Omit<Headline, 'classes'>, Widget {
   isReversed?: boolean;
   isAfterContent?: boolean;
   callToAction?: CallToAction;
+}
+
+export interface Marquee extends Omit<Headline, 'classes'>, Widget {
+  items: MarqueeItem[];
+  duration?: number;
+}
+
+export interface ContactSocial extends Omit<Headline, 'classes'>, Widget {
+  items: ContactSocialItem[];
 }
