@@ -72,11 +72,9 @@ const certs = [
     }},
   >
     <Fragment slot="subtitle">
-      MSc in Computer Science and Engineering at Instituto Superior Técnico, University of Lisbon. <br /> <span class="text-sm font-normal">Specializing in Software Engineering and Distributed Systems.</span>
+      Master in Computer Science and Engineering at Instituto Superior Técnico, University of Lisbon. <br /> <span class="text-sm font-normal">Specializing in Software Engineering and Distributed Systems.</span>
     </Fragment>
   </Hero2>
-
-  <!-- TODO: include button to open PDF CV on a new tab -->
 
   <!-- Scroll animation -->
 
@@ -88,18 +86,20 @@ const certs = [
 
   <!-- Resume section (for now, just education) ****************** -->
 
+  <!-- TODO: later, include button to open PDF CV on a new tab -->
+
   <Steps
     id="resume"
     title="Education"
     items={[
-      // Note: maybe include which skills I used during each?
       {
         title: `MSc in Computer Science and Engineering <br /> <span class="font-normal">Instituto Superior Técnico, University of Lisbon</span> <br /> <span class="text-sm font-normal">2024 - July 2026 (expected)</span>`,
-        description: `Specializing in Software Engineering and Distributed Systems`,
+        description: `Specializing in Software Engineering and Distributed Systems. <br /> <span class="font-light text-sm">Master’s project portfolio is available on <a href="https://github.com/TiDeane/TiDeane/blob/main/IST_MEIC-A.md" class="font-normal underline hover:text-white/95 transition">Github</a>.</span>`,
         icon: 'tabler:school',
       },
       {
         title: `BSc in Computer Science and Engineering <br /> <span class="font-normal">Instituto Superior Técnico, University of Lisbon</span> <br /> <span class="text-sm font-normal">2021 - 2024</span>`,
+        description: `<span class="font-light text-sm">Bachelor's project portfolio is available on <a href="https://github.com/TiDeane/TiDeane/blob/main/IST_LEIC-A.md" class="font-normal underline hover:text-white/95 transition">Github</a>.</span>`,
         icon: 'tabler:school',
       },
     ]}
