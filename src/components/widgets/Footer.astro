@@ -86,7 +86,6 @@ const API_URL = "https://tiagodeane.com/top";
     try {
       const response = await fetch(API_URL);
       if (!response.ok) throw new Error('Failed when fetching top countries from API Gateway');
-      throw new Error('Failed when fetching top countries from API Gateway');
 
       const data = await response.json();
 
