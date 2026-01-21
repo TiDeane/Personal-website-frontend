@@ -9,6 +9,8 @@ import Certifications from '~/components/widgets/Certifications.astro';
 import ContactSocial from '~/components/widgets/ContactSocial.astro';
 import LottiePlayer from '~/components/common/LottiePlayer.astro';
 
+import profilePicture from '~/assets/images/profile.png';
+
 const logos = [
   { src: "/skills/javascript.svg", label: "JavaScript" },
   { src: "/skills/tailwindcss.svg", label: "CSS" },
@@ -65,9 +67,8 @@ const certs = [
     title="Tiago Deane"
     tagline="Student, Developer"
     image={{
-      // TODO: ADD PROFILE PICTURE! This is currently a placeholder
-      src: 'https://images.unsplash.com/photo-1580481072645-022f9a6dbf27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Colorful Image',
+      src: profilePicture,
+      alt: 'Tiago Deane profile picture',
       loading: 'eager',
     }},
   >
