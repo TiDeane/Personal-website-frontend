@@ -2,161 +2,61 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Header from '~/components/widgets/Header.astro';
-import Hero2 from '~/components/widgets/Hero2.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Marquee from '~/components/widgets/Marquee.astro';
-import Certifications from '~/components/widgets/Certifications.astro';
 import ContactSocial from '~/components/widgets/ContactSocial.astro';
-import LottiePlayer from '~/components/common/LottiePlayer.astro';
 
 import profilePicture from '~/assets/images/profile.png';
-
-const logos = [
-  { src: "/skills/javascript.svg", label: "JavaScript" },
-  { src: "/skills/tailwindcss.svg", label: "CSS" },
-  { src: "/skills/amazonwebservices.svg", label: "AWS" },
-  { src: "/skills/python.svg", label: "Python" },
-  { src: "/skills/c.svg", label: "C" },
-  { src: "/skills/java.svg", label: "Java" },
-  { src: "/skills/docker.svg", label: "Docker" },
-  { src: "/skills/postgresql.svg", label: "SQL" },
-  { src: "/skills/dynamodb.svg", label: "NoSQL" },
-];
-
-const certs = [
-  {
-    src: "/certs/AWS_Cloud_Practitioner.png",
-    title: "AWS Certified Cloud Practitioner",
-    url: "https://www.credly.com/badges/9d94075d-c315-4582-9c3e-73b7f2b26f3e/public_url"
-  },
-  {
-    src: "/certs/AWS_Solutions_Architect.png",
-    title: "AWS Certified Solutions Architect",
-    url: "https://www.credly.com/badges/90b1dff1-8827-4d07-ba9f-24471da65096/public_url"
-  },
-  {
-    src: "/certs/AWS_Developer.png",
-    title: "AWS Certified Developer",
-    url: "https://www.credly.com/badges/208bf604-03a4-4d24-a1e4-43dfabd9b601/public_url"
-  }
-]
-
+import { Image } from 'astro:assets';
 ---
 
 <Layout>
   <Fragment slot="header">
-    <Header
-      links={[
-        { text: 'About', href: '#about' },
-        { text: 'Resume', href: '#resume' },
-        { text: 'Skills', href: '#skills' },
-        { text: 'Certifications', href: '#certs' },
-        { text: 'Contact', href: '#contact' },
-      ]}
-      isSticky
-      showToggleTheme
-      position="right"
-    />
+    <Header links={[]} isSticky showToggleTheme position="right" />
   </Fragment>
 
+  <section class="relative flex items-center min-h-screen px-4">
+    <div class="max-w-2xl mx-auto text-center">
+      <Image
+        src={profilePicture}
+        alt="Tiago Deane profile picture"
+        width={128}
+        height={128}
+        loading="eager"
+        class="mx-auto rounded-full w-32 h-32 object-cover mb-6"
+      />
 
-  <!-- Hero Section ******************* -->
+      <h1 class="text-4xl md:text-5xl font-bold font-heading dark:text-gray-200 mb-4">
+        Tiago Deane
+      </h1>
 
-  <Hero2
-    id="about"
-    title="Tiago Deane"
-    tagline="Student, Developer"
-    image={{
-      src: profilePicture,
-      alt: 'Tiago Deane profile picture',
-      loading: 'eager',
-    }},
-  >
-    <Fragment slot="subtitle">
-      Master in Computer Science and Engineering at Instituto Superior Técnico, University of Lisbon. <br /> <span class="text-sm font-normal">Specializing in Software Engineering and Distributed Systems.</span>
-    </Fragment>
-  </Hero2>
+      <p class="text-xl text-muted dark:text-slate-300 mb-2">
+        Software Engineer at Mastercard.
+      </p>
 
-  <!-- Scroll animation -->
+      <p class="text-base text-secondary dark:text-blue-200 font-semibold uppercase tracking-wide mb-10">
+        Website under development — check back soon
+      </p>
 
-  <LottiePlayer
-    src="/ui/scroll.json"
-    class="mx-auto w-8 h-8 opacity-80 dark:opacity-50 -mt-16 hidden lg:block"
-  />
-
-
-  <!-- Resume section (for now, just education) ****************** -->
-
-  <!-- TODO: later, include button to open PDF CV on a new tab -->
-
-  <Steps
-    id="resume"
-    title="Education"
-    items={[
-      {
-        title: `MSc in Computer Science and Engineering <br /> <span class="font-normal">Instituto Superior Técnico, University of Lisbon</span> <br /> <span class="text-sm font-normal">2024 - July 2026 (expected)</span>`,
-        description: `Specializing in Software Engineering and Distributed Systems. <br /> <span class="font-light text-sm">Master’s project portfolio is available on <a href="https://github.com/TiDeane/TiDeane/blob/main/IST_MEIC-A.md" class="font-normal underline dark:hover:text-white/95 hover:text-primary transition">Github</a>.</span>`,
-        icon: 'tabler:school',
-      },
-      {
-        title: `BSc in Computer Science and Engineering <br /> <span class="font-normal">Instituto Superior Técnico, University of Lisbon</span> <br /> <span class="text-sm font-normal">2021 - 2024</span>`,
-        description: `<span class="font-light text-sm">Bachelor's project portfolio is available on <a href="https://github.com/TiDeane/TiDeane/blob/main/IST_LEIC-A.md" class="font-normal underline dark:hover:text-white/95 hover:text-primary transition">Github</a>.</span>`,
-        icon: 'tabler:school',
-      },
-    ]}
-    classes={{ container: 'max-w-3xl pb-18 md:pb-24 lg:pb-30' }}
-  />
-
-
-  <!-- Skills section ****************** -->
-
-  <Marquee
-    id="skills"
-    title="Skills & Technologies"
-    items={logos}
-    duration={20}
-    classes={{ container: ''}}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-black/5 dark:bg-white/5"></div>
-    </Fragment>
-  </Marquee>
-
-
-  <!-- Certifications section ****************** -->
-
-  <Certifications
-    id="certs"
-    title="Certifications"
-    certs={certs}
-    classes={{ container: 'pt-18 md:pt-36 lg:py-40' }}
-  />
-
-
-  <!-- Contact section ****************** -->
-
-  <ContactSocial
-    id="contact"
-    title="Contact me"
-    items={[
-      // Note: maybe include Discord?
-      {
-        label: 'Email',
-        icon: 'tabler:mail',
-        url: 'mailto:tiagodeane@gmail.com'
-      },
-      {
-        label: 'Github',
-        icon: 'tabler:brand-github',
-        url: 'https://github.com/TiDeane'
-      },
-      {
-        label: 'LinkedIn',
-        icon: 'tabler:brand-linkedin',
-        url: 'https://www.linkedin.com/in/tiago-deane/'
-      },
-    ]}
-    classes={{ container: 'max-w-3xl pt-6 md:pt-8 lg:pt-0 lg:pb-20' }}
-  />
-
+      <ContactSocial
+        title=""
+        items={[
+          {
+            label: 'Email',
+            icon: 'tabler:mail',
+            url: 'mailto:tiagodeane@gmail.com',
+          },
+          {
+            label: 'Github',
+            icon: 'tabler:brand-github',
+            url: 'https://github.com/TiDeane',
+          },
+          {
+            label: 'LinkedIn',
+            icon: 'tabler:brand-linkedin',
+            url: 'https://www.linkedin.com/in/tiago-deane/',
+          },
+        ]}
+        classes={{ container: 'max-w-3xl mx-auto' }}
+      />
+    </div>
+  </section>
 </Layout>
