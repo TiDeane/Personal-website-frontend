@@ -99,7 +99,7 @@ const API_URL = "https://tiagodeane.com/top";
         message.textContent = `Top visitors: ${countries.join(', ')}`;
         container.classList.remove('md:hidden');
       }
-    } catch (error) {
+    } catch {
       socials.classList.remove('hidden');
       console.log('Error: analytics unavailable');
     }
