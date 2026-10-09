@@ -22,3 +22,5 @@ pnpm-debug.log*
 pnpm-lock.yaml
 
 .astro
+# unused local images, kept outside src/ so they aren't bundled
+unused-images/
