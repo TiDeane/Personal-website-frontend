@@ -271,7 +271,9 @@ import { UI } from 'astrowind:config';
 
 <script is:inline>
   /* Interacts with a simple backend that keeps track of the number of visits to the website, per country */
-  fetch('https://tiagodeane.com/track', {
-    method: 'POST'
-  }).catch(console.error);
+  if (location.hostname === 'tiagodeane.com') {
+    fetch('https://tiagodeane.com/track', {
+      method: 'POST'
+    }).catch(console.error);
+  }
 </script>
