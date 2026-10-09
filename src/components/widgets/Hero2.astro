@@ -58,6 +58,15 @@ const {
           }
 
           {
+            content && (
+              <div
+                class="text-lg text-muted mb-8 dark:text-slate-400 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter"
+                set:html={content}
+              />
+            )
+          }
+
+          {
             resumeHref && (
               <div class="max-w-xs sm:max-w-md m-auto flex justify-center lg:justify-start lg:m-0 mb-6 intersect-once motion-safe:md:intersect:animate-fade motion-safe:md:opacity-0 intersect-quarter">
                 <ResumeButton href={resumeHref} />
@@ -81,7 +90,6 @@ const {
             )
           }
         </div>
-        {content && <Fragment set:html={content} />}
       </div>
       <div class="basis-1/2 lg:pr-20">
         {
