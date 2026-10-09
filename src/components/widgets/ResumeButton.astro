@@ -1,0 +1,35 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { HTMLAttributes } from 'astro/types';
+
+export interface Props {
+  id?: string;
+  href: string;
+  text?: string;
+  icon?: string;
+  target?: HTMLAttributes<'a'>['target'];
+  classes?: {
+    container?: string;
+    button?: string;
+  };
+}
+
+const { id, href, text = 'View Resume', icon = 'tabler:file-cv', target = '_blank', classes = {} } = Astro.props;
+
+const { container: containerClass = '', button: buttonClass = '' } = classes;
+---
+
+<div id={id} class:list={['inline-flex', containerClass]}>
+  <a
+    href={href}
+    target={target}
+    rel={target === '_blank' ? 'noopener noreferrer' : undefined}
+    class:list={[
+      'inline-flex items-center gap-2 rounded-full border border-gray-300 dark:border-gray-600 px-6 py-3 font-medium text-black dark:text-white hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-primary dark:hover:border-primary transition',
+      buttonClass,
+    ]}
+  >
+    {icon && <Icon name={icon} class="w-5 h-5" />}
+    {text}
+  </a>
+</div>
