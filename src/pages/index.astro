@@ -100,8 +100,11 @@ const certs = [
         icon: 'tabler:briefcase',
       },
     ]}
-    classes={{ container: 'pb-18 md:pb-24 lg:pb-30' }}
-  />
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-x-0 inset-y-6 md:inset-y-8 lg:inset-y-10 bg-black/5 dark:bg-white/5"></div>
+    </Fragment>
+  </ResumeSteps>
 
   <!-- Education section ****************** -->
 
@@ -110,6 +113,7 @@ const certs = [
   <ResumeSteps
     id="education"
     title="Education"
+    classes={{ container: 'pt-6 md:pt-8 lg:pt-10' }}
     items={[
       {
         title: 'Master in Computer Science and Engineering',
@@ -132,7 +136,6 @@ const certs = [
         icon: 'tabler:school',
       },
     ]}
-    classes={{ container: 'pb-18 md:pb-24 lg:pb-30' }}
   />
 
   <!-- Skills section ****************** -->
@@ -145,7 +148,7 @@ const certs = [
 
   <!-- Certifications section ****************** -->
 
-  <Certifications id="certs" title="Certifications" certs={certs} classes={{ container: 'pt-18 md:pt-36 lg:py-40' }} />
+  <Certifications id="certs" title="Certifications" certs={certs} classes={{ container: 'pt-16 md:pt-36 lg:py-40' }} />
 
   <!-- Contact section ****************** -->
 
