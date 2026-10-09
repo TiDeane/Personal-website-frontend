@@ -15,8 +15,6 @@ export interface Props {
 }
 
 const { socialLinks = [], footNote = '', theme = 'light' } = Astro.props;
-
-const API_URL = "https://tiagodeane.com/top";
 ---
 
 <footer class:list={[{ dark: theme === 'dark' }, 'relative border-t border-gray-200 dark:border-slate-800 not-prose']}>
@@ -70,37 +68,64 @@ const API_URL = "https://tiagodeane.com/top";
 
 
 <!-- Top countries by visitor count display -->
-<script define:vars={{ API_URL }} is:inline>
-  
+<script>
+  import { polyfillCountryFlagEmojis } from 'country-flag-emoji-polyfill';
+  import flagFontUrl from 'country-flag-emoji-polyfill/dist/TwemojiCountryFlags.woff2?url';
+
+  interface TopCountry {
+    countryName: string;
+    countryCode: string;
+    count: number;
+  }
+
+  const API_URL = 'https://tiagodeane.com/top';
+
+  // The API only allows the production origin, so dev builds render placeholder data instead
+  const PLACEHOLDER_COUNTRIES: TopCountry[] = [
+    { countryName: 'Portugal', countryCode: 'PT', count: 1111 },
+    { countryName: 'United States', countryCode: 'US', count: 266 },
+    { countryName: 'Singapore', countryCode: 'SG', count: 41 },
+  ];
+
+  // Chromium on Windows has no flag emoji glyphs; this loads a flag-only font there and nowhere else
+  polyfillCountryFlagEmojis('Twemoji Country Flags', flagFontUrl);
+
   // from "https://dev.to/jorik/country-code-to-flag-emoji-a21"
-  const getFlagEmoji = (countryCode) => {
+  const getFlagEmoji = (countryCode: string) => {
     if (!countryCode) return '🌐';
     const codePoints = countryCode
       .toUpperCase()
       .split('')
-      .map(char => 127397 + char.charCodeAt(0));
+      .map((char) => 127397 + char.charCodeAt(0));
     return String.fromCodePoint(...codePoints);
-};
+  };
 
-  async function fetchStats() {   
+  async function getTopCountries(): Promise<TopCountry[]> {
+    if (import.meta.env.DEV) return PLACEHOLDER_COUNTRIES;
+
+    const response = await fetch(API_URL);
+    if (!response.ok) throw new Error('Failed when fetching top countries from API Gateway');
+    const data = await response.json();
+    return data?.topCountries ?? [];
+  }
+
+  async function renderTopCountries() {
     const container = document.getElementById('visitor-container');
     const socials = document.getElementById('social-links');
     const list = document.getElementById('visitor-list');
-    
+    if (!container || !socials || !list) return;
+
     try {
-      const response = await fetch(API_URL);
-      if (!response.ok) throw new Error('Failed when fetching top countries from API Gateway');
+      const countries = await getTopCountries();
+      if (!countries.length) throw new Error('No top countries returned');
 
-      const data = await response.json();
-
-      if (!data?.topCountries?.length) throw new Error('No top countries returned');
-
-      for (const c of data.topCountries) {
+      for (const c of countries) {
         const chip = document.createElement('li');
         chip.className =
           'inline-flex items-center gap-1.5 rounded-full border border-gray-200 dark:border-slate-700 bg-black/5 dark:bg-white/5 px-2.5 py-0.5 transition hover:border-gray-400 dark:hover:border-slate-400';
 
         const flag = document.createElement('span');
+        flag.style.fontFamily = '"Twemoji Country Flags", sans-serif';
         flag.setAttribute('aria-hidden', 'true');
         flag.textContent = getFlagEmoji(c.countryCode);
 
@@ -122,5 +147,5 @@ const API_URL = "https://tiagodeane.com/top";
     }
   }
 
-  fetchStats();
+  renderTopCountries();
 </script>
