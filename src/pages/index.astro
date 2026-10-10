@@ -7,6 +7,7 @@ import ResumeSteps from '~/components/widgets/ResumeSteps.astro';
 import Marquee from '~/components/widgets/Marquee.astro';
 import Certifications from '~/components/widgets/Certifications.astro';
 import ContactSocial from '~/components/widgets/ContactSocial.astro';
+import OffTheClock from '~/components/widgets/OffTheClock.astro';
 import LottiePlayer from '~/components/common/LottiePlayer.astro';
 
 import profilePicture from '~/assets/images/profile.png';
@@ -173,5 +174,15 @@ const certs = [
       },
     ]}
     classes={{ container: 'max-w-3xl pt-6 md:pt-8 lg:pt-0 lg:pb-20' }}
+  />
+
+  <OffTheClock
+    id="off-the-clock"
+    text="Off the clock, I'm usually reading or watching something. Recommendations are welcome!"
+    items={[
+      { label: 'Goodreads', icon: 'simple-icons:goodreads', url: 'https://www.goodreads.com/tideane' },
+      { label: 'Letterboxd', icon: 'simple-icons:letterboxd', url: 'https://letterboxd.com/TDeane' },
+      { label: 'MyAnimeList', icon: 'simple-icons:myanimelist', url: 'https://myanimelist.net/profile/Deane' },
+    ]}
   />
 </Layout>

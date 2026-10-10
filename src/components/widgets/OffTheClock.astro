@@ -1,0 +1,55 @@
+---
+// Lighthearted personal links shown after the Contact section.
+// To remove: delete this file, its import and usage in src/pages/index.astro, the 'simple-icons' entry
+// in astro.config.ts, and run `npm uninstall @iconify-json/simple-icons`.
+import { Icon } from 'astro-icon/components';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import type { ContactSocialItem, Widget } from '~/types';
+
+export interface Props extends Widget {
+  text?: string;
+  items?: ContactSocialItem[];
+}
+
+const {
+  text = await Astro.slots.render('text'),
+  items = [],
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+---
+
+<WidgetWrapper
+  id={id}
+  isDark={isDark}
+  containerClass={`max-w-3xl pt-0 md:pt-0 lg:pt-0 text-center ${classes?.container ?? ''}`}
+  bg={bg}
+>
+  <!-- Shorter and fainter than the Contact divider, so this reads as an aside -->
+  <div class="w-12 h-px bg-gray-200 dark:bg-gray-800 mx-auto mb-6 rounded" aria-hidden="true"></div>
+
+  {text && <p class="text-sm text-muted dark:text-slate-400" set:html={text} />}
+
+  {
+    items.length > 0 && (
+      <ul class="mt-3 flex flex-wrap justify-center gap-1 list-none">
+        {items.map(({ label, icon, url }) => (
+          <li>
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 px-3 py-1 text-xs text-muted dark:text-slate-400 transition duration-200 hover:text-blue-500 dark:hover:text-orange-300"
+            >
+              {icon && <Icon name={icon} class="w-4 h-4" />}
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</WidgetWrapper>
