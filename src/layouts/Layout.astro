@@ -20,12 +20,15 @@ import { ClientRouter } from 'astro:transitions';
     <!-- Comment the line below to disable View Transitions -->
     <ClientRouter fallback="swap" />
 
-    <script type="module" src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" is:inline></script>
+    <script type="module" src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" is:inline
+    ></script>
   </head>
 
-  <body class="antialiased text-default bg-page tracking-tight
+  <body
+    class="antialiased text-default bg-page tracking-tight
                bg-[url('/bg/nnnoise_inverted.svg')]
-               dark:bg-[url('/bg/nnnoise.svg')] bg-repeat bg-[length:700px_700px] bg-fixed">
+               dark:bg-[url('/bg/nnnoise.svg')] bg-repeat bg-[length:700px_700px] bg-fixed"
+  >
     <slot />
 
     <BasicScripts />

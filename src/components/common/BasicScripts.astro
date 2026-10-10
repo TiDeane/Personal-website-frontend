@@ -162,7 +162,7 @@ import { UI } from 'astrowind:config';
     onLoad();
     onPageShow();
   });
-  
+
   document.getElementById('currentYear').textContent = new Date().getFullYear();
 </script>
 
@@ -288,7 +288,7 @@ import { UI } from 'astrowind:config';
     }
 
     fetch('https://tiagodeane.com/track', {
-      method: 'POST'
+      method: 'POST',
     })
       .then((response) => {
         /* A failed request isn't recorded, so the next page load tries again */

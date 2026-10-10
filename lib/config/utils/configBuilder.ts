@@ -37,7 +37,6 @@ const getUI = (config: Config) => {
   return merge({}, _default, config?.ui ?? {});
 };
 
-
 export default (config: Config) => ({
   SITE: getSite(config),
   UI: getUI(config),
