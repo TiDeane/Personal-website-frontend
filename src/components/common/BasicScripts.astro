@@ -271,9 +271,34 @@ import { UI } from 'astrowind:config';
 
 <script is:inline>
   /* Interacts with a simple backend that keeps track of the number of visits to the website, per country */
-  if (location.hostname === 'tiagodeane.com') {
+  (() => {
+    /* Only counts visits on the live site, so dev and preview builds don't inflate the numbers */
+    if (location.hostname !== 'tiagodeane.com') return;
+
+    /* A browser counts as one visit per interval, so refreshing the page doesn't inflate its country's count */
+    const TRACK_INTERVAL_MS = 5 * 60 * 1000;
+    const STORAGE_KEY = 'lastVisitTrackedAt';
+
+    try {
+      const lastTrackedAt = Number(localStorage.getItem(STORAGE_KEY));
+      const elapsed = Date.now() - lastTrackedAt;
+      if (lastTrackedAt && elapsed >= 0 && elapsed < TRACK_INTERVAL_MS) return;
+    } catch {
+      /* Storage is unavailable (private mode, blocked site data), so the visit is tracked on every load */
+    }
+
     fetch('https://tiagodeane.com/track', {
       method: 'POST'
-    }).catch(console.error);
-  }
+    })
+      .then((response) => {
+        /* A failed request isn't recorded, so the next page load tries again */
+        if (!response.ok) return;
+        try {
+          localStorage.setItem(STORAGE_KEY, String(Date.now()));
+        } catch {
+          /* Storage is unavailable, nothing to record */
+        }
+      })
+      .catch(console.error);
+  })();
 </script>
